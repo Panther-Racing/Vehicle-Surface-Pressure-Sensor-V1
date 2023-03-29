@@ -1,0 +1,241 @@
+*************************************************************
+FileName = SurfacePressureSensor_V1.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : SurfacePressureSensor_V1.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D25
+    D26
+    D27
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : SurfacePressureSensor_V1.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D25
+    D26
+    D27
+    D28
+*************************************************************
+
+*************************************************************
+Generating : Top Component Center
+      File : SurfacePressureSensor_V1.GM16
+
+    Adding Layer      : Top Component Center
+
+
+Used DCodes :
+    D31
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : SurfacePressureSensor_V1.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D31
+    D32
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : SurfacePressureSensor_V1.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D11
+    D31
+*************************************************************
+
+*************************************************************
+Generating : Top 3D Body
+      File : SurfacePressureSensor_V1.GM2
+
+    Adding Layer      : Top 3D Body
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : SurfacePressureSensor_V1.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D11
+    D30
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : SurfacePressureSensor_V1.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D28
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : SurfacePressureSensor_V1.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D23
+    D24
+    D29
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : SurfacePressureSensor_V1.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : SurfacePressureSensor_V1.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : SurfacePressureSensor_V1.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D28
+*************************************************************
+
+*************************************************************
+Generating : Top Courtyard
+      File : SurfacePressureSensor_V1.GM3
+
+    Adding Layer      : Top Courtyard
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Top Assembly
+      File : SurfacePressureSensor_V1.GM5
+
+    Adding Layer      : Top Assembly
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : SurfacePressureSensor_V1.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : SurfacePressureSensor_V1.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+*************************************************************
+
