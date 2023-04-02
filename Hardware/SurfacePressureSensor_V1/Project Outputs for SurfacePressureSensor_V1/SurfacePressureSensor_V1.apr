@@ -18,6 +18,7 @@ D26   ROUNDED            50.000      50.000       0.000 FLASH       0.000
 D27   ROUNDED            39.370      39.370       0.000 FLASH       0.000
 D28   RECTANGULAR        10.827       9.842       0.000 FLASH     180.000
 D29   RECTANGULAR        15.827      14.842       0.000 FLASH     180.000
-D30   ROUNDED             6.890       6.890       0.000  LINE       0.000
+D30   ROUNDED             6.890       6.890       0.000 FLASH       0.000
 D31   ROUNDED             3.937       3.937       0.000  LINE       0.000
 D32   ROUNDED             1.968       1.968       0.000  LINE       0.000
+D33   ROUNDED            47.244      47.244       0.000  LINE       0.000
