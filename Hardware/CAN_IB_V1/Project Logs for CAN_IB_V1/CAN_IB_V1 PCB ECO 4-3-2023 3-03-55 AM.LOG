@@ -1,0 +1,59 @@
+Removed Pin From Net: NetName=GND Pin=SENS-1-01
+Removed Pin From Net: NetName=VCC Pin=SENS-1-03
+Removed Pin From Net: NetName=GND Pin=SENS-2-01
+Removed Pin From Net: NetName=VCC Pin=SENS-2-03
+Removed Pin From Net: NetName=GND Pin=SENS-3-01
+Removed Pin From Net: NetName=VCC Pin=SENS-3-03
+Removed Pin From Net: NetName=GND Pin=SENS-4-01
+Removed Pin From Net: NetName=VCC Pin=SENS-4-03
+Removed Member From Class: ClassName=CAN Expansion V1 Member=SENS-1
+Removed Member From Class: ClassName=CAN Expansion V1 Member=SENS-2
+Removed Member From Class: ClassName=CAN Expansion V1 Member=SENS-3
+Removed Member From Class: ClassName=CAN Expansion V1 Member=SENS-4
+Added Component: Designator=SENS(TE_776266-1)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "776266-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/776266-1/TE%20Connectivity%20AMP%20Connectors/view-part/1467220/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TE_purchase_URL"; Value = "https://www.te.com/usa-en/product-776266-1.html?te_bu=Cor&te_type=disp&te_campaign=seda_glo_cor-seda-global-disp-prtnr-fy19-seda-model-bom-cta_sma-317_1&elqCampaignId=32493"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=CAN_SCK Pin=SENS-1
+Added Pin To Net: NetName=CAN_MOSI Pin=SENS-2
+Added Pin To Net: NetName=CAN_MISO Pin=SENS-3
+Added Pin To Net: NetName=GND Pin=SENS-14
+Change Net Name : Old Net Name=CS New Net Name=CS-9
+Change Net Name : Old Net Name=D0 New Net Name=RXD
+Change Net Name : Old Net Name=D1 New Net Name=TXD
+Added Pin To Net: NetName=3.3V Pin=SENS-13
+Added Net: Name=3.3V
+Added Pin To Net: NetName=CS-1 Pin=MPU-1
+Added Pin To Net: NetName=CS-1 Pin=SENS-4
+Added Net: Name=CS-1
+Added Pin To Net: NetName=CS-2 Pin=MPU-2
+Added Pin To Net: NetName=CS-2 Pin=SENS-5
+Added Net: Name=CS-2
+Added Pin To Net: NetName=CS-3 Pin=MPU-9
+Added Pin To Net: NetName=CS-3 Pin=SENS-6
+Added Net: Name=CS-3
+Added Pin To Net: NetName=CS-4 Pin=MPU-10
+Added Pin To Net: NetName=CS-4 Pin=SENS-7
+Added Net: Name=CS-4
+Added Pin To Net: NetName=CS-5 Pin=MPU-11
+Added Pin To Net: NetName=CS-5 Pin=SENS-8
+Added Net: Name=CS-5
+Added Pin To Net: NetName=CS-6 Pin=MPU-12
+Added Pin To Net: NetName=CS-6 Pin=SENS-9
+Added Net: Name=CS-6
+Added Pin To Net: NetName=CS-7 Pin=MPU-13
+Added Pin To Net: NetName=CS-7 Pin=SENS-10
+Added Net: Name=CS-7
+Added Pin To Net: NetName=CS-8 Pin=MPU-23
+Added Pin To Net: NetName=CS-8 Pin=SENS-11
+Added Net: Name=CS-8
+Change Class Name : Old Net Name=CAN Expansion V1 New Net Name=CAN_IB_V1
+Added Member To Class: ClassName=CAN_IB_V1 Member=Component SENS 776266-1
+Change Room Name: Old Name=CAN Expansion V1 New Name=CAN_IB_V1
+Change Room Scope: Old Scope=InComponentClass('CAN Expansion V1') New Scope=InComponentClass('CAN_IB_V1')

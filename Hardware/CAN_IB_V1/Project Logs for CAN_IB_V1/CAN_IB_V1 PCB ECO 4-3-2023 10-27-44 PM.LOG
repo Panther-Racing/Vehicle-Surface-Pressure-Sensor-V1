@@ -1,0 +1,47 @@
+Added Component: Designator=?(TO-252_L)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.st.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASHEET/CD00002116.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "2/12/2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "3-Pin Transistor Outline Package 2.28 mm Pitch, 9.7 mm Lead Span (DPAK)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "TO-252"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "2011"; VariantName = "[No Variations]"
+Added Component: Designator=BUS(TE_DT13-6P)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DigiKey-Purchase-URL"; Value = "https://snapeda.com/shop?store=DigiKey&id=1897474"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "DT13-6P"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/DT13-6P/TE%20Connectivity%20Deutsch%20Connectors/view-part/1897474/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=CS(DT1308PA)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "DT13-08PA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/dt13-08pa/te-connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7FDT13-08PX%7FC%7Fpdf%7FEnglish%7FENG_CD_DT13-08PX_C.pdf%7FDT13-08PA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Geometry.Height"; Value = "35.26mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "DT13-08PA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "571-DT13-08PA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/TE-Connectivity-DEUTSCH/DT13-08PA?qs=vkMqrgFpRajDHhjEbCDGkQ%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=?-1
+Added Pin To Net: NetName=VCC Pin=?-3
+Added Pin To Net: NetName=3.3V Pin=?-4
+Added Pin To Net: NetName=3.3V Pin=BUS-1
+Added Pin To Net: NetName=GND Pin=BUS-2
+Added Pin To Net: NetName=CAN_SCK Pin=BUS-3
+Added Pin To Net: NetName=CAN_MOSI Pin=BUS-4
+Added Pin To Net: NetName=CAN_MISO Pin=BUS-5
+Added Pin To Net: NetName=CS-1 Pin=CS-1
+Added Pin To Net: NetName=CS-2 Pin=CS-2
+Added Pin To Net: NetName=CS-3 Pin=CS-3
+Added Pin To Net: NetName=CS-4 Pin=CS-4
+Added Pin To Net: NetName=CS-5 Pin=CS-5
+Added Pin To Net: NetName=CS-6 Pin=CS-6
+Added Pin To Net: NetName=CS-7 Pin=CS-7
+Added Pin To Net: NetName=CS-8 Pin=CS-8
+Added Member To Class: ClassName=CAN_IB_V1 Member=Component ? LD1117ADT33TR
+Added Member To Class: ClassName=CAN_IB_V1 Member=Component BUS DT13-6P
+Added Member To Class: ClassName=CAN_IB_V1 Member=Component CS DT13-08PA
