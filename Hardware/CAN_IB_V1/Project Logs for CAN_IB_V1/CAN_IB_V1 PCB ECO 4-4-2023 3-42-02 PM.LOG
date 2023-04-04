@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator=J NewDesignator=SPI_H
+Added Pin To Net: NetName=3.3V Pin=SPI_H-1
+Added Pin To Net: NetName=GND Pin=SPI_H-2
+Added Pin To Net: NetName=CAN_SCK Pin=SPI_H-3
+Added Pin To Net: NetName=CAN_MOSI Pin=SPI_H-4
+Added Pin To Net: NetName=CAN_MISO Pin=SPI_H-5

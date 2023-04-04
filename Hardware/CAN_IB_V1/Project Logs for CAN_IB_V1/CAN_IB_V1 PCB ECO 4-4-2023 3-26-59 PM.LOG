@@ -1,0 +1,22 @@
+Removed Pin From Net: NetName=3.3V Pin=SPI-1
+Removed Pin From Net: NetName=GND Pin=SPI-2
+Removed Pin From Net: NetName=CAN_SCK Pin=SPI-3
+Removed Pin From Net: NetName=CAN_MOSI Pin=SPI-4
+Removed Pin From Net: NetName=CAN_MISO Pin=SPI-5
+Removed Member From Class: ClassName=CAN_IB_V1 Member=SPI
+Added Component: Designator=SPI_H(TE_DT13-6P)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DigiKey-Purchase-URL"; Value = "https://snapeda.com/shop?store=DigiKey&id=1897474"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "DT13-6P"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/DT13-6P/TE%20Connectivity%20Deutsch%20Connectors/view-part/1897474/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3.3V Pin=SPI_H-1
+Added Pin To Net: NetName=GND Pin=SPI_H-2
+Added Pin To Net: NetName=CAN_SCK Pin=SPI_H-3
+Added Pin To Net: NetName=CAN_MOSI Pin=SPI_H-4
+Added Pin To Net: NetName=CAN_MISO Pin=SPI_H-5
+Added Member To Class: ClassName=CAN_IB_V1 Member=Component SPI_H DT13-6P

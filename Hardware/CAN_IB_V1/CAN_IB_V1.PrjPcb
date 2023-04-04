@@ -389,7 +389,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document21]
-DocumentPath=Libraries\DT13-6P.IntLib
+DocumentPath=Libraries\DT13-8PA\DT13-08PA.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -406,7 +406,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document22]
-DocumentPath=..\..\..\..\..\Downloads\LIB_DT13-08PA\DT13-08PA\Altium\DT13-08PA.SchLib
+DocumentPath=Libraries\DT13-8PA\DT1308PA.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -420,10 +420,10 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=AAAKVINE
 
 [Document23]
-DocumentPath=..\..\..\..\..\Downloads\LIB_DT13-08PA\DT13-08PA\Altium\DT1308PA.PcbLib
+DocumentPath=Libraries\DT13-6P\Project Outputs for DT13-6P\DT13-6P\Project Outputs for DT13-6P\DT13-6P.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
