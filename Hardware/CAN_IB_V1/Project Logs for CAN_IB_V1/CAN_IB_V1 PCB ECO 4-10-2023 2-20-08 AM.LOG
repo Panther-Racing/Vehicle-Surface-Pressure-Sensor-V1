@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=GND Pin=R5-1
+Removed Pin From Net: NetName=LVL-Drive Pin=R5-2
+Removed Pin From Net: NetName=GND Pin=R6-1
+Removed Pin From Net: NetName=LVL-Drive Pin=R6-2
+Removed Member From Class: ClassName=CAN_IB_V1 Member=R6
+Added Pin To Net: NetName=LVL-Drive Pin=R5-1
+Added Pin To Net: NetName=GND Pin=R5-2

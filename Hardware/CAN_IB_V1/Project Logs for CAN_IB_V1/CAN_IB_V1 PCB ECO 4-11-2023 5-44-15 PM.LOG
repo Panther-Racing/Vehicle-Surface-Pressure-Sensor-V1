@@ -1,0 +1,20 @@
+Added Component: Designator=ADC(SAMTEC-TSW-106-07-X-S)
+Added Pin To Net: NetName=ADC-0 Pin=ADC-1
+Added Pin To Net: NetName=ADC-0 Pin=MPU-23
+Added Net: Name=ADC-0
+Added Pin To Net: NetName=ADC-1 Pin=ADC-2
+Added Pin To Net: NetName=ADC-1 Pin=MPU-24
+Added Net: Name=ADC-1
+Added Pin To Net: NetName=ADC-2 Pin=ADC-3
+Added Pin To Net: NetName=ADC-2 Pin=MPU-25
+Added Net: Name=ADC-2
+Added Pin To Net: NetName=ADC-3 Pin=ADC-4
+Added Pin To Net: NetName=ADC-3 Pin=MPU-26
+Added Net: Name=ADC-3
+Added Pin To Net: NetName=ADC-4 Pin=ADC-5
+Added Pin To Net: NetName=ADC-4 Pin=MPU-27
+Added Net: Name=ADC-4
+Added Pin To Net: NetName=ADC-5 Pin=ADC-6
+Added Pin To Net: NetName=ADC-5 Pin=MPU-28
+Added Net: Name=ADC-5
+Added Member To Class: ClassName=CAN_IB_V1 Member=Component ADC SAMTEC-TSW-106-07-X-SJ

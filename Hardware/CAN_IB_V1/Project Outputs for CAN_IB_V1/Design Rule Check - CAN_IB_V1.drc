@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\patmu\Documents\GitHub\Vehicle-Surface-Pressure-Sensor-V1\Hardware\CAN_IB_V1\CAN_IB_V1.PcbDoc
-Date     : 4/6/2023
-Time     : 12:19:31 AM
+Date     : 4/11/2023
+Time     : 6:27:26 PM
 
 Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
 Rule Violations :0
@@ -51,17 +51,16 @@ Rule Violations :0
 Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
 Rule Violations :0
 
-Processing Rule : Room CAN_IB_V1 (Bounding Region = (9.75mm, 26mm, 67.5mm, 86mm) (InComponentClass('CAN_IB_V1'))
-   Violation between Room Definition: Between Component CS_H-DT13-08PA (21.825mm,16.7mm) on Top Layer And Room CAN_IB_V1 (Bounding Region = (9.75mm, 26mm, 67.5mm, 86mm) (InComponentClass('CAN_IB_V1')) 
-   Violation between Room Definition: Between Component SPI_H-DT13-6P (47.75mm,39.7mm) on Top Layer And Room CAN_IB_V1 (Bounding Region = (9.75mm, 26mm, 67.5mm, 86mm) (InComponentClass('CAN_IB_V1')) 
-   Violation between Room Definition: Between Room CAN_IB_V1 (Bounding Region = (9.75mm, 26mm, 67.5mm, 86mm) (InComponentClass('CAN_IB_V1')) And SIP Component Serial Prog-SAMTEC-TSW-106-07-X-SJ (23.02mm,56.75mm) on Bottom Layer 
+Processing Rule : Room CAN_IB_V1 (Bounding Region = (13.75mm, 26mm, 48mm, 64.25mm) (InComponentClass('CAN_IB_V1'))
+   Violation between Room Definition: Between Room CAN_IB_V1 (Bounding Region = (13.75mm, 26mm, 48mm, 64.25mm) (InComponentClass('CAN_IB_V1')) And SIP Component ADC-SAMTEC-TSW-106-07-X-SJ (2.133mm,11.152mm) on Top Layer 
+   Violation between Room Definition: Between Room CAN_IB_V1 (Bounding Region = (13.75mm, 26mm, 48mm, 64.25mm) (InComponentClass('CAN_IB_V1')) And SIP Component COMS-SAMTEC-TSW-113-07-X-SJ (36mm,19.79mm) on Bottom Layer 
+   Violation between Room Definition: Between Room CAN_IB_V1 (Bounding Region = (13.75mm, 26mm, 48mm, 64.25mm) (InComponentClass('CAN_IB_V1')) And SIP Component Serial Prog-SAMTEC-TSW-106-07-X-SJ (24.5mm,35.75mm) on Bottom Layer 
 Rule Violations :3
 
 Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
-   Violation between Height Constraint: Component SPI_H-DT13-6P (47.75mm,39.7mm) on Top Layer Actual Height = 35.268mm
-Rule Violations :1
+Rule Violations :0
 
 
-Violations Detected : 4
+Violations Detected : 3
 Waived Violations : 0
 Time Elapsed        : 00:00:02
