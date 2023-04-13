@@ -1,12 +1,34 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : Project [SurfacePressureSensor_V1.PrjPcb]
-   Generated File[SurfacePressureSensor_V1.TXT]
-   Generated File[SurfacePressureSensor_V1.LDP]
-   Generated File[SurfacePressureSensor_V1.DRR]
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [SurfacePressureSensor_V1.PrjPcb]
+   Generated File[SurfacePressureSensor_V1.GTO]
+   Generated File[SurfacePressureSensor_V1.GTP]
+   Generated File[SurfacePressureSensor_V1.GTS]
+   Generated File[SurfacePressureSensor_V1.GTL]
+   Generated File[SurfacePressureSensor_V1.GBL]
+   Generated File[SurfacePressureSensor_V1.GBS]
+   Generated File[SurfacePressureSensor_V1.GBP]
+   Generated File[SurfacePressureSensor_V1.GBO]
+   Generated File[SurfacePressureSensor_V1.GM1]
+   Generated File[SurfacePressureSensor_V1.GM2]
+   Generated File[SurfacePressureSensor_V1.GM3]
+   Generated File[SurfacePressureSensor_V1.GM5]
+   Generated File[SurfacePressureSensor_V1.GM13]
+   Generated File[SurfacePressureSensor_V1.GM15]
+   Generated File[SurfacePressureSensor_V1.GM16]
+   Generated File[SurfacePressureSensor_V1.GM20]
+   Generated File[SurfacePressureSensor_V1.GM21]
+   Generated File[SurfacePressureSensor_V1.GM23]
+   Generated File[SurfacePressureSensor_V1.GM24]
+   Generated File[SurfacePressureSensor_V1.GKO]
+   Generated File[SurfacePressureSensor_V1.GPT]
+   Generated File[SurfacePressureSensor_V1.GPB]
+   Generated File[SurfacePressureSensor_V1.RUL]
+   Generated File[SurfacePressureSensor_V1.EXTREP]
+   Generated File[SurfacePressureSensor_V1.REP]
 
 
-Files Generated   : 3
+Files Generated   : 25
 Documents Printed : 0
 
-Finished Output Generation At 11:48:56 AM On 3/31/2023
+Finished Output Generation At 12:30:11 PM On 4/13/2023

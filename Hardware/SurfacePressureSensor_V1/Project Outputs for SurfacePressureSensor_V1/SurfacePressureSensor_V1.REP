@@ -2,26 +2,6 @@
 FileName = SurfacePressureSensor_V1.GBR
 AutoAperture = True
 *************************************************************
-Generating : Bottom Component Center
-      File : SurfacePressureSensor_V1.GM24
-
-    Adding Layer      : Bottom Component Center
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom 3D Body
-      File : SurfacePressureSensor_V1.GM23
-
-    Adding Layer      : Bottom 3D Body
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
 Generating : Top Pad Master
       File : SurfacePressureSensor_V1.GPT
 
@@ -36,7 +16,6 @@ Used DCodes :
     D14
     D15
     D16
-    D17
 *************************************************************
 
 *************************************************************
@@ -68,7 +47,6 @@ Used DCodes :
     D14
     D15
     D16
-    D17
 *************************************************************
 
 *************************************************************
@@ -83,14 +61,12 @@ Generating : Top Solder
 
 
 Used DCodes :
+    D16
     D17
     D18
     D19
     D20
     D21
-    D22
-    D23
-    D24
 *************************************************************
 
 *************************************************************
@@ -105,10 +81,9 @@ Generating : Bottom Solder
 
 
 Used DCodes :
-    D20
-    D23
-    D24
-    D29
+    D21
+    D26
+    D27
 *************************************************************
 
 *************************************************************
@@ -123,8 +98,8 @@ Generating : Bottom Paste
 
 
 Used DCodes :
-    D14
-    D28
+    D24
+    D25
 *************************************************************
 
 *************************************************************
@@ -136,7 +111,7 @@ Generating : Bottom Overlay
 
 Used DCodes :
     D11
-    D30
+    D28
 *************************************************************
 
 *************************************************************
@@ -147,7 +122,7 @@ Generating : Keep-Out Layer
 
 
 Used DCodes :
-    D33
+    D31
 *************************************************************
 
 *************************************************************
@@ -172,6 +147,17 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
+Generating : Top Courtyard
+      File : SurfacePressureSensor_V1.GM3
+
+    Adding Layer      : Top Courtyard
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
 Generating : Bottom Pad Master
       File : SurfacePressureSensor_V1.GPB
 
@@ -181,19 +167,8 @@ Generating : Bottom Pad Master
 
 
 Used DCodes :
-    D14
-    D28
-*************************************************************
-
-*************************************************************
-Generating : Top Courtyard
-      File : SurfacePressureSensor_V1.GM3
-
-    Adding Layer      : Top Courtyard
-
-
-Used DCodes :
-    D10
+    D24
+    D25
 *************************************************************
 
 *************************************************************
@@ -208,24 +183,27 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Component Center
-      File : SurfacePressureSensor_V1.GM16
+Generating : Mechanical 13
+      File : SurfacePressureSensor_V1.GM13
 
-    Adding Layer      : Top Component Center
-
-
-Used DCodes :
-    D31
-*************************************************************
-
-*************************************************************
-Generating : Bottom Assembly
-      File : SurfacePressureSensor_V1.GM20
-
-    Adding Layer      : Bottom Assembly
+    Adding Layer      : Mechanical 13
 
 
 Used DCodes :
+    D11
+    D29
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : SurfacePressureSensor_V1.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D29
+    D30
 *************************************************************
 
 *************************************************************
@@ -233,6 +211,26 @@ Generating : Bottom Courtyard
       File : SurfacePressureSensor_V1.GM21
 
     Adding Layer      : Bottom Courtyard
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom 3D Body
+      File : SurfacePressureSensor_V1.GM23
+
+    Adding Layer      : Bottom 3D Body
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Component Center
+      File : SurfacePressureSensor_V1.GM24
+
+    Adding Layer      : Bottom Component Center
 
 
 Used DCodes :
@@ -248,11 +246,10 @@ Generating : Bottom Layer
 
 
 Used DCodes :
-    D14
+    D22
+    D23
+    D24
     D25
-    D26
-    D27
-    D28
 *************************************************************
 
 *************************************************************
@@ -270,33 +267,28 @@ Used DCodes :
     D14
     D15
     D16
-    D17
-    D25
-    D26
-    D27
+    D22
+    D23
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 13
-      File : SurfacePressureSensor_V1.GM13
+Generating : Top Component Center
+      File : SurfacePressureSensor_V1.GM16
 
-    Adding Layer      : Mechanical 13
+    Adding Layer      : Top Component Center
 
 
 Used DCodes :
-    D11
-    D31
+    D29
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 15
-      File : SurfacePressureSensor_V1.GM15
+Generating : Bottom Assembly
+      File : SurfacePressureSensor_V1.GM20
 
-    Adding Layer      : Mechanical 15
+    Adding Layer      : Bottom Assembly
 
 
 Used DCodes :
-    D31
-    D32
 *************************************************************
 
