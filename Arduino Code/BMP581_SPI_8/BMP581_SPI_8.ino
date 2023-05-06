@@ -17,14 +17,14 @@ BMP581 pressureSensor_8;
 
 // SPI parameters all share same MISO(12), MOSI(11) and SCK (13) 
 // Each sensor different SS 
-uint8_t chipSelectPin_1 = 10;
-uint8_t chipSelectPin_2 = 3;
-uint8_t chipSelectPin_3 = 4;
-uint8_t chipSelectPin_4 = 5;
-uint8_t chipSelectPin_5 = 6;
-uint8_t chipSelectPin_6 = 7;
-uint8_t chipSelectPin_7 = 8;
-uint8_t chipSelectPin_8 = 9;
+uint8_t chipSelectPin_1 = 3;
+uint8_t chipSelectPin_2 = 4;
+uint8_t chipSelectPin_3 = 5;
+uint8_t chipSelectPin_4 = 6;
+uint8_t chipSelectPin_5 = 7;
+uint8_t chipSelectPin_6 = 8;
+uint8_t chipSelectPin_7 = 9;
+uint8_t chipSelectPin_8 = 10;
 
 uint32_t clockFrequency = 100000;
 
@@ -33,6 +33,10 @@ void setup()
     // Start serial
     Serial.begin(115200);
     Serial.println("BMP581 Example2 begin!");
+
+    //turn on level shifter
+    pinMode(14, OUTPUT);
+    digitalWrite(14, HIGH);
 
     // Initialize the SPI library
     SPI.begin();
