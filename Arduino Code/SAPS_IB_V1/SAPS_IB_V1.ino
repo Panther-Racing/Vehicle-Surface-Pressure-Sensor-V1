@@ -1,4 +1,4 @@
-/* SAPS CAN Interface Board
+/* SAPS CAN Interface Board Firmware
  *  Version 0.1
  * Made by Patrick Murphy
  *
@@ -18,18 +18,25 @@
  *
  *
  *  BMP581 notes
- *    data is stored in a 24bit configuration for both temp and pressure so need 6 data points for each if want temp and pressure
- * Message N
- *  bit 0: compound ID N
- *  bit 1: counter
- *  bit 2: sens N P_XLSB 
- *  bit 3: sens N P_LSB
- *  bit 4: sens N P_MSB
- *  bit 5: sens N T_XLSB
- *  bit 6: sens N T_LSB
- *  bit 7: sens N T_MSB
- *
- *
+ *    data is stored in a 24bit configuration for pressure in the BMP581
+        to convert to usable values do [MSB,LSB,XLSB]/2^6 aka >>6
+ *  
+ * 64 bits
+ * counter(2^4 - 4 bit )
+ * 60 bits
+ * compound ID (2^4 - 4 bit) 
+ * 57 bits
+ * CAN MSG 1
+ *  PRS 1 2 3
+ * 
+ * CAN MSG 2
+ *  PRS 4 5 6
+
+ * CAN MSG 3
+ *  PRS 7 8 tmp 2
+ * 
+ * 
+ * 
  *  workflow for sending data to CAN
  *  determine if sens 1 connected, send data if so with compound ID 1, dont if otherwise
  *  determine if sens 2 connected, send data if so with compound ID 2, dont if otherwise
@@ -92,11 +99,11 @@ struct can_frame frame;
 
 void setup() 
 {
-  pinMode(A6,INPUT_PULLUP);
-  pinMode(A7,INPUT_PULLUP);
-  interval = 1000/interval; //conversion from HZ to MS
-  //Setting Pullups on ADC pins in use
+  // level shifter enable pins
+  pinMode(14,OUTPUT);
+  digitalWrite(14,HIGH);
 
+  interval = 1000/interval; //conversion from HZ to MS
 
   frame.can_id  = 0x761; //CAN ID
   /*
@@ -200,18 +207,18 @@ void message1() {
   //state comparison value
   
   // if sensor ok state=1, if problem state=0
-  if(err_1 == BMP5_OK)  
+  if(err_1 == BMP5_OK)
   {
-    state = state || 0x01;
+    uint32_t sens1 = ((data_1.pressure << 1) & 0x00FFFFE0;)
   }
   else
   {
-    state = state and 0b11111110; 
+    sens1=0x00000000; 
   }
 
   if(err_2 == BMP5_OK)  
   {
-    state = state | 0b00000010;
+    uint32_t sens2 = ((data_2.pressure << 1) & 0x00FFFFE0;)
   }
   else
   {
@@ -220,7 +227,7 @@ void message1() {
   
   if(err_3 == BMP5_OK)  
   {
-    state = state | 0b00000100;
+    uint32_t sens3 = ((data_3.pressure << 1) & 0x00FFFFE0;)
   }
   else
   {
@@ -229,7 +236,7 @@ void message1() {
 
   if(err_4 == BMP5_OK)  
   {
-    state = state | 0b00001000;
+    uint32_t sens4 = ((data_4.pressure << 1) & 0x00FFFFE0;)
   }
   else
   {
@@ -238,7 +245,7 @@ void message1() {
   
   if(err_5 == BMP5_OK)  
   {
-    state = state | 0b00010000;
+    uint32_t sens5 = ((data_5.pressure << 1) & 0x00FFFFE0;)
   }
   else
   {
@@ -247,7 +254,7 @@ void message1() {
 
   if(err_6 == BMP5_OK)  
   {
-    state = state | 0b00100000;
+    uint32_t sens6 = ((data_6.pressure << 1) & 0x00FFFFE0;)
   }
   else
   {
@@ -256,7 +263,7 @@ void message1() {
   
   if(err_7 == BMP5_OK)  
   {
-    state = state | 0b01000000;
+    uint32_t sens7 = ((data_7.pressure << 1) & 0x00FFFFE0);
   }
   else
   {
@@ -265,14 +272,14 @@ void message1() {
   
   if(err_8 == BMP5_OK)  
   {
-    state = state | 0b10000000;
+    uint32_t sens8 = ((data_8.pressure << 1) & 0x00FFFFE0;)
   }
   else
   {
     state = state & 0b01111111;
   }
 
-  frame.data[0] = state;
+  frame.data[0] = counter
   frame.data[1] = 0x00;
   frame.data[2] = 0x00;
   frame.data[3] = 0x00;
