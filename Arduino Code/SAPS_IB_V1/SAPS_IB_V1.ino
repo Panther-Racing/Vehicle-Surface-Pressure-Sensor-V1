@@ -20,6 +20,8 @@
  *  BMP581 notes
  *    data is stored in a 24bit configuration for pressure in the BMP581
         to convert to usable values do [MSB,LSB,XLSB]/2^6 aka >>6
+        so to reverse we multiply by 10^6 aka <<6
+        uint32_t (pa*2^6)
  *  
  * 64 bits
  * counter(2^4 - 4 bit )
@@ -48,7 +50,10 @@
 #include <SPI.h>
 #include <mcp2515.h>
 #include "SparkFun_BMP581_Arduino_Library.h"
-struct can_frame frame;
+struct can_frame frame1;
+struct can_frame frame2;
+struct can_frame frame3;
+
 
 // Create a new sensor object
   BMP581 pressureSensor_1;
@@ -63,14 +68,14 @@ struct can_frame frame;
 
 // SPI parameters all share same MISO(12), MOSI(11) and SCK (13) 
 // Each sensor different SS 
-  uint8_t chipSelectPin_1 = 1;
-  uint8_t chipSelectPin_2 = 2;
-  uint8_t chipSelectPin_3 = 9;
-  uint8_t chipSelectPin_4 = 10;
-  uint8_t chipSelectPin_5 = 11;
-  uint8_t chipSelectPin_6 = 12;
-  uint8_t chipSelectPin_7 = 13;
-  uint8_t chipSelectPin_8 = 14;
+  uint8_t chipSelectPin_1 = 3;
+  uint8_t chipSelectPin_2 = 4;
+  uint8_t chipSelectPin_3 = 5;
+  uint8_t chipSelectPin_4 = 6;
+  uint8_t chipSelectPin_5 = 7;
+  uint8_t chipSelectPin_6 = 8;
+  uint8_t chipSelectPin_7 = 9;
+  uint8_t chipSelectPin_8 = 10;
 
   uint32_t clockFrequency = 100000;
 
@@ -92,7 +97,7 @@ struct can_frame frame;
 
 
   // board Chip Select Pin for SPI to CAN chip  
-    uint8_t CS=22; // ADC7
+    uint8_t CS=15; // ADC7
     MCP2515 mcp2515(CS);
  
 
@@ -105,21 +110,27 @@ void setup()
 
   interval = 1000/interval; //conversion from HZ to MS
 
-  frame.can_id  = 0x761; //CAN ID
+  frame1.can_id  = 0x761; //CAN ID
+  frame2.can_id  = 0x761; //CAN ID
+  frame3.can_id  = 0x761; //CAN ID
+
   /*
-    Front Wing = 
-    Side Wing = 
+    Front Wing bot = 
+    Frpmt wing top = 
     Rear Wing = 
   */
   
-  frame.can_dlc = 8;//Data lenght of frame
+  frame1.can_dlc = 8;//Data lenght of frame
+  frame2.can_dlc = 8;//Data lenght of frame
+  frame3.can_dlc = 8;//Data lenght of frame
   //debug control    
-  while (!Serial);
+  //while (!Serial);
   Serial.begin(115200);
   
   mcp2515.reset();
   mcp2515.setBitrate(CAN_1000KBPS, MCP_8MHZ);
   mcp2515.setNormalMode();
+
 
   while(pressureSensor_1.beginSPI(chipSelectPin_1, clockFrequency) != BMP5_OK)
     {
@@ -129,6 +140,7 @@ void setup()
         // Wait a bit to see if connection is established
         delay(1000);
     }
+
     while(pressureSensor_2.beginSPI(chipSelectPin_2, clockFrequency) != BMP5_OK)
     {
         // Not connected, inform user
@@ -185,13 +197,24 @@ void setup()
         // Wait a bit to see if connection is established
         delay(1000);
     }
+
+  /*  
+    pressureSensor_1.beginSPI(chipSelectPin_1, clockFrequency);
+    pressureSensor_2.beginSPI(chipSelectPin_2, clockFrequency);
+    pressureSensor_3.beginSPI(chipSelectPin_3, clockFrequency);
+    pressureSensor_4.beginSPI(chipSelectPin_4, clockFrequency);
+    pressureSensor_5.beginSPI(chipSelectPin_5, clockFrequency);
+    pressureSensor_6.beginSPI(chipSelectPin_6, clockFrequency);
+    pressureSensor_7.beginSPI(chipSelectPin_7, clockFrequency);
+    pressureSensor_8.beginSPI(chipSelectPin_8, clockFrequency);
+    */
     Serial.println("All BMP581 sensors connected!");
 }
   
 
 
-void message1() {
-
+void messages() {
+    
   int8_t state=0x00;
   byte TEC=ReadReg(0x1C); // Reading the Transmit Error Counter(TEC) from the can transciever
   bmp5_sensor_data data_1, data_2, data_3, data_4, data_5, data_6, data_7, data_8 = {0,0};
@@ -205,11 +228,28 @@ void message1() {
   int8_t err_7 = pressureSensor_7.getSensorData(&data_7);
   int8_t err_8 = pressureSensor_8.getSensorData(&data_8);
   //state comparison value
-  
+
+  uint32_t sens1=0x00000000; 
+  uint32_t sens2=0x00000000; 
+  uint32_t sens3=0x00000000; 
+  uint32_t sens4=0x00000000; 
+  uint32_t sens5=0x00000000; 
+  uint32_t sens6=0x00000000; 
+  uint32_t sens7=0x00000000; 
+  uint32_t sens8=0x00000000; 
+  uint32_t temp2=0x00000000;
+
   // if sensor ok state=1, if problem state=0
   if(err_1 == BMP5_OK)
   {
-    uint32_t sens1 = ((data_1.pressure << 1) & 0x00FFFFE0;)
+    //Serial.println(data_1.pressure);
+    
+    sens1 = (long(data_1.pressure * 64) & 0x00FFFFE0);
+    
+    //Serial.println(sens1);
+
+    sens1=sens1>>5;
+    //Serial.println(sens1);
   }
   else
   {
@@ -218,81 +258,122 @@ void message1() {
 
   if(err_2 == BMP5_OK)  
   {
-    uint32_t sens2 = ((data_2.pressure << 1) & 0x00FFFFE0;)
+    Serial.println(data_2.pressure);
+
+    sens2 = (long(data_2.pressure *64) & 0x00FFFFE0);
+    Serial.println(sens2);
+    
+    sens2=sens2>>5;
+    Serial.println(sens2);
+
+    temp2 = (long(data_2.temperature*65536) & 0x00FFFFE0);
+    temp2=temp2>>5;
   }
   else
   {
-    state = state & 0b11111101;
+    temp2=0x00000000;
+    sens2=0x00000000;
   }
   
   if(err_3 == BMP5_OK)  
   {
-    uint32_t sens3 = ((data_3.pressure << 1) & 0x00FFFFE0;)
+    sens3 = (long(data_3.pressure *64) & 0x00FFFFE0);
+    sens3 = sens3>>5;
   }
   else
   {
-    state = state & 0b11111011;
+    sens3=0x00000000;
   }
 
   if(err_4 == BMP5_OK)  
   {
-    uint32_t sens4 = ((data_4.pressure << 1) & 0x00FFFFE0;)
+    sens4 = (long(data_4.pressure *64) & 0x00FFFFE0);
+    sens4 = sens4>>5;
+    
   }
   else
   {
-    state = state & 0b11110111;
+    sens4 = 0x00000000;
   }
   
   if(err_5 == BMP5_OK)  
   {
-    uint32_t sens5 = ((data_5.pressure << 1) & 0x00FFFFE0;)
-  }
-  else
-  {
-    state = state & 0b11101111;
-  }
-
-  if(err_6 == BMP5_OK)  
-  {
-    uint32_t sens6 = ((data_6.pressure << 1) & 0x00FFFFE0;)
+    sens5 = (long(data_5.pressure *64) & 0x00FFFFE0);
+    sens5=sens5>>5;
   }
   else
   {
     state = state & 0b11011111;
+    sens5 = 0x00000000;
+  }
+
+  if(err_6 == BMP5_OK)  
+  {
+    sens6 = (long(data_6.pressure *64) & 0x00FFFFE0);
+    sens6=sens6>>5;
+  }
+  else
+  {
+    sens6 = 0x00000000;
   }
   
   if(err_7 == BMP5_OK)  
   {
-    uint32_t sens7 = ((data_7.pressure << 1) & 0x00FFFFE0);
+    sens7 = (long(data_7.pressure *64) & 0x00FFFFE0);
+    sens7=sens7>>5;
   }
   else
   {
-    state = state & 0b10111111;
+    sens7 = 0x00000000;
   }
   
   if(err_8 == BMP5_OK)  
   {
-    uint32_t sens8 = ((data_8.pressure << 1) & 0x00FFFFE0;)
+    sens8 = (long(data_8.pressure *64) & 0x00FFFFE0);
+    sens8=sens8>>5;
   }
   else
   {
-    state = state & 0b01111111;
+    sens8 = 0x00000000;
   }
+  // compound ID is designed to be a 3 bit value ie 000, 001, 010, 011, 100, 101, 110, or 111
+  uint8_t compoundID1= 0x00;
+  //compound ID 1
+  frame1.data[0] = (((counter<<4)& 0xF0) & (compoundID1<<1 & 0b00001110) & (sens1>>23 & 0x01));
+  frame1.data[1] = sens1>>15 & 0xFF;
+  frame1.data[2] = sens1>>8 &0xFF;
+  frame1.data[3] = (sens1<<1 & 0b11000000) & (sens2>>18 & 0b00111111);
+  frame1.data[4] = sens2>>10;
+  frame1.data[5] = (sens2>>2 & 0b11000000) & (sens3>>21 & 0b00111111);
+  frame1.data[6] = (sens3>> 13 & 0xFF); 
+  frame1.data[7] = (sens3>>5 & 0xFF);
+  mcp2515.sendMessage(&frame1);
 
-  frame.data[0] = counter
-  frame.data[1] = 0x00;
-  frame.data[2] = 0x00;
-  frame.data[3] = 0x00;
-  frame.data[4] = 0x00;
-  frame.data[5] = firmwareversion;
-  frame.data[6] = TEC;
-  frame.data[7] = counter; 
+  //compound ID 2
+  uint8_t compoundID2= 0x01;
+  frame2.data[0] = (((counter<<4)& 0xF0) | (compoundID2<<1 & 0b00001110) | (sens4>>23 & 0x01));
+  frame2.data[1] = sens4>>15 & 0xFF;
+  frame2.data[2] = sens4>>8 &0xFF;
+  frame2.data[3] = (sens4<<1 & 0b11000000) | (sens5>>18 & 0b00111111);
+  frame2.data[4] = sens5>>10;
+  frame2.data[5] = (sens5>>2 & 0b11000000) | (sens6>>21 & 0b00111111);
+  frame2.data[6] = (sens6>> 13 & 0xFF); 
+  frame2.data[7] = (sens6>>5 & 0xFF);
+  mcp2515.sendMessage(&frame2);
 
-  mcp2515.sendMessage(&frame);
+    //compound ID 2
+  uint8_t compoundID3= 0x02;
+  frame3.data[0] = (((counter<<4)& 0xF0) | (compoundID3<<1 & 0b00001110) | (sens7>>23 & 0x01));
+  frame3.data[1] = sens7>>15 & 0xFF;
+  frame3.data[2] = sens7>>8 &0xFF;
+  frame3.data[3] = (sens7<<1 & 0b11000000) | (sens8>>18 & 0b00111111);
+  frame3.data[4] = sens8>>10;
+  frame3.data[5] = (sens8>>2 & 0b11000000) | (temp2>>21 & 0b00111111);
+  frame3.data[6] = (sens2>> 13 & 0xFF); 
+  frame3.data[7] = (sens2>>5 & 0xFF);
+  mcp2515.sendMessage(&frame3);
 }
-
-
-void loop() 
+void loop()
 {
 
   unsigned long currentMillis = millis();
@@ -311,8 +392,7 @@ void loop()
     }
 
     //Message function
-    message1();
-
+    messages();
   }
 }
 
