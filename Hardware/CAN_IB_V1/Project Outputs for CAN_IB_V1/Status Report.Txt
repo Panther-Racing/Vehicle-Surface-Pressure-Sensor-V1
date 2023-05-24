@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [CAN_IB_V1.PrjPcb]
+   Generated File[CAN_IB_V1.TXT]
+   Generated File[CAN_IB_V1.LDP]
+   Generated File[CAN_IB_V1.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 3:16:11 PM On 4/17/2023
